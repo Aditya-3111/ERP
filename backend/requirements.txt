@@ -1,0 +1,10 @@
+# FinLedger Pro - backend packages          (install:  pip install -r requirements.txt)
+Django>=5.2,<5.3                      # web framework (tested with 5.2)
+djangorestframework>=3.15             # REST API
+djangorestframework-simplejwt>=5.3    # login tokens (JWT) + logout blacklist
+django-cors-headers>=4.3              # lets the React app (port 5173) call the API (port 8000)
+django-filter>=24.0                   # ?status=active style filters
+django-import-export>=4.0             # Excel/CSV import-export helpers
+Pillow>=10.0                          # image fields (photos, logos)
+PyMySQL>=1.1                          # MySQL / MariaDB driver (pure Python - nothing to compile)
+cryptography>=42.0                    # needed by PyMySQL for MySQL 8 password login

@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Backend: Django server",
+      "type": "shell",
+      "command": "${workspaceFolder}/backend/.venv/Scripts/python.exe manage.py runserver",
+      "linux": { "command": "${workspaceFolder}/backend/.venv/bin/python manage.py runserver" },
+      "osx": { "command": "${workspaceFolder}/backend/.venv/bin/python manage.py runserver" },
+      "options": { "cwd": "${workspaceFolder}/backend" },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "panel": "dedicated", "group": "servers" }
+    },
+    {
+      "label": "Frontend: React dev server",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": { "cwd": "${workspaceFolder}/frontend" },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "panel": "dedicated", "group": "servers" }
+    },
+    {
+      "label": "Start backend + frontend",
+      "dependsOn": ["Backend: Django server", "Frontend: React dev server"],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
+    },
+    {
+      "label": "Backend: run tests",
+      "type": "shell",
+      "command": "${workspaceFolder}/backend/.venv/Scripts/python.exe manage.py test",
+      "linux": { "command": "${workspaceFolder}/backend/.venv/bin/python manage.py test" },
+      "osx": { "command": "${workspaceFolder}/backend/.venv/bin/python manage.py test" },
+      "options": { "cwd": "${workspaceFolder}/backend" },
+      "problemMatcher": []
+    }
+  ]
+}
